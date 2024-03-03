@@ -4,4 +4,5 @@ let text =
   '{ "firstName":"Anna" , "lastName":"Smith" },' +
   '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
 
-  /*  Changes Made*/ 
+var obj = JSON.parse(text);
+
