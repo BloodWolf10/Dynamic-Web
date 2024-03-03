@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My webpage</title>
+    <style>
+        .highlight{
+            background-color: yellow;
+        }
+
+        .fade-out{
+           opacity:0;
+           transition: 1s ease-in-out;
+
+        }
+        .background{
+            p{
+                color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Welcome to my webpage</h1>
+    <p class="content-paragraph">This is the text on my Webpage</p>
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ul>
+
+    <button id="modify-button">Modify page</button>
+   <h2 id="secondary-heading">Discover your Styles!</h2>
+   <p class="content-paragraph"> Click buttons below to see effects.</p>
+
+   <button id="toggle-button">Toggle</button>
+   <button id="fade-out">Fade-Out</button>
+   <button id="reset">Reset</button>
+
+   <div id="content">
+      <p> This content can also be modified</p>
+      <img id="logo" src="images/javascript-3.png" alt="javascript logo"/>
+
+   </div>
+
+   <script>
+       const secondaryHeading = document.getElementById('secondary-heading');
+       const content = document.getElementById('content');
+       const logo = document.getElementById('logo');
+       const toggle = document.getElementById('toggle-button');
+       const fadeout = document.getElementById('fade-out');
+       const reset = document.getElementById('reset');
+  
+
+       // Toggle the heading when clicked and highlight class
+     secondaryHeading.addEventListener('click', function(){
+        secondaryHeading.classList.toggle('highlight');
+       })
+
+       // Add Fade Out Effect
+
+       fadeout.addEventListener('click', function(){
+        content.classList.add('fade-out')
+    })
+
+     // Reset Fade Out Event
+
+      reset.addEventListener('click',function(){
+        content.classList.remove('fade-out');
+    
+      })
+
+      // Utilize toggle button
+
+      toggle.addEventListener('click', function(){
+      content.classList.toggle('background');
+
+      })
+      
+   </script>
+
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
