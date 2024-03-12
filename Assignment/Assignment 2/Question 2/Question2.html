@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Form</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <style>
+    .blurred {
+      filter: blur(4px); /* You can adjust the blur level as needed */
+      pointer-events: none; /* Prevent interactions with blurred elements */
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<form id="checkoutForm">
+  <fieldset>
+    <legend>Billing Information</legend>
+    <label for="billingName">Name:</label>
+    <input type="text" id="billingName" name="billingName" required>
+  <br><br>
+    <label for="billingEmail">Email:</label>
+    <input type="email" id="billingEmail" name="billingEmail" required>
+  <br><br>
+    <label for="billingAddress">Address:</label>
+    <input type="text" id="billingAddress" name="billingAddress" required>
+  <br><br>
+    <label for="billingCity">City:</label>
+    <input type="text" id="billingCity" name="billingCity" required>
+  <br><br>
+    <label for="billingState">State/Province:</label>
+    <input type="text" id="billingState" name="billingState" required>
+  <br><br>
+    <label for="billingPostalCode">Postal Code:</label>
+    <input type="text" id="billingPostalCode" name="billingPostalCode" required>
+  <br><br>
+    <label for="billingCountry">Country:</label>
+    <select id="billingCountry" name="billingCountry" required>
+      <!-- Add your country options here -->
+      <option value="" disabled selected>Select your country</option>
+      <option value="usa">USA</option>
+      <option value="canada">Canada</option>
+      <!-- Add more countries as needed -->
+    </select>
+  <br><br>
+    <label>Payment Method:</label>
+    <div>
+      <label for="paypal">PayPal</label>
+      <input type="radio" id="paypal" name="paymentMethod" value="paypal" required>
+
+      <label for="visa">Visa</label>
+      <input type="radio" id="visa" name="paymentMethod" value="visa" required>
+
+      <label for="mastercard">MasterCard</label>
+      <input type="radio" id="mastercard" name="paymentMethod" value="mastercard" required>
+    </div>
+
+    <div id="cardInfo" class="blurred">
+      <label for="cardNumber">Card Number:</label>
+      <input type="text" id="cardNumber" name="cardNumber" required>
+
+      <label for="expiryDate">Expiration Date:</label>
+      <input type="text" id="expiryDate" name="expiryDate" required>
+    </div>
+  </fieldset>
+  
+    <br>  
+  <fieldset>
+      <legend>Shipping Information</legend>
+      <input type="checkbox" id="sameAsBilling" name="sameAsBilling"> Same as Billing<br>
+
+    <div id="shippingInfo" class="">
+      <label for="shippingName">Name:</label>
+      <input type="text" id="shippingName" name="shippingName">
+  <br><br>
+      <label for="shippingAddress">Address:</label>
+      <input type="text" id="shippingAddress" name="shippingAddress">
+  <br><br>
+      <label for="shippingCity">City:</label>
+      <input type="text" id="shippingCity" name="shippingCity">
+  <br><br>
+      <label for="shippingState">State/Province:</label>
+      <input type="text" id="shippingState" name="shippingState">
+  <br><br>
+      <label for="shippingPostalCode">Postal Code:</label>
+      <input type="text" id="shippingPostalCode" name="shippingPostalCode">
+  <br><br>
+      <label for="shippingCountry">Country:</label>
+      <select id="shippingCountry" name="shippingCountry">
+        <!-- Add your country options here -->
+        <option value="" disabled selected>Select your country</option>
+        <option value="usa">USA</option>
+        <option value="canada">Canada</option>
+        <!-- Add more countries as needed -->
+      </select>
+    </div>
+  </fieldset>
+
+  
+<br>
+  <button type="submit">Submit</button>
+</form>
+
+<script src="scripts/Question2.js">  </script>
+
+</body>
+</html>
